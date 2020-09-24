@@ -4,6 +4,7 @@ name: run_eslint
 # Trigger the workflow on push or pull request
 on:
   - push  
+  - pull_request
 
 jobs:
   build:
@@ -35,6 +36,6 @@ jobs:
         
       - name: Run linter
         # Run Linter
-        run: |
+        run: 
           make lint
       
