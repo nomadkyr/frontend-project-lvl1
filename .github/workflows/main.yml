@@ -22,7 +22,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run linter
-        run: make lint
+        run: |
+          make lint
         with: 
           eslint: true
 
