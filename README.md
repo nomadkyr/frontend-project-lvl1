@@ -1,5 +1,8 @@
 # frontend-project-lvl1
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-![eslint_action](https://github.com/nomadkyr/frontend-project-lvl1/workflows/eslint_action/badge.svg)
+![run_eslint](https://github.com/nomadkyr/frontend-project-lvl1/workflows/run_eslint/badge.svg)
+
+brain-even
+[![asciicast](https://asciinema.org/a/u9Wjzv8JTV3RpSkk5PRtCypPY.svg)](https://asciinema.org/a/u9Wjzv8JTV3RpSkk5PRtCypPY)
 
