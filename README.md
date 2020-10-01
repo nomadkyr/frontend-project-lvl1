@@ -4,8 +4,10 @@
 ![run_eslint](https://github.com/nomadkyr/frontend-project-lvl1/workflows/run_eslint/badge.svg)
 
 brain-even
+
 [![asciicast](https://asciinema.org/a/u9Wjzv8JTV3RpSkk5PRtCypPY.svg)](https://asciinema.org/a/u9Wjzv8JTV3RpSkk5PRtCypPY)
 
 brain-calc
-[![asciicast](https://asciinema.org/a/fwwtKi4hlRjnTUkxxh0wMKJhl.svg)](https://asciinema.org/a/fwwtKi4hlRjnTUkxxh0wMKJhl)
+
+[![asciicast](https://asciinema.org/a/DNTMN7vKcWXjgrCqEeY0VM9Ja.svg)](https://asciinema.org/a/DNTMN7vKcWXjgrCqEeY0VM9Ja)
 
