@@ -31,7 +31,8 @@ const brainCalc = () => {
       console.log('Correct');
     } else {
       const failAnswer = `"${printAnswer}" is wrong answer ;(. Correct answer was "${result}"\n Let's try again, ${printName}!`;
-      return failAnswer;
+      console.log(failAnswer);
+      return;
     }
   }
 
