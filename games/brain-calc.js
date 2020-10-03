@@ -6,6 +6,7 @@ const brainCalc = () => {
   console.log(`Hello, ${printName}!`);
   const message = 'What is the result of the expression?';
   console.log(message);
+  const message2 = `Congratulations, ${printName}!`;
 
   for (let i = 0; i < 3; i += 1) {
     const firstNumber = Math.floor(Math.random() * 10) + 1;
@@ -32,11 +33,11 @@ const brainCalc = () => {
     } else {
       const failAnswer = `"${printAnswer}" is wrong answer ;(. Correct answer was "${result}"\n Let's try again, ${printName}!`;
       console.log(failAnswer);
-      return;
+      return failAnswer;
     }
   }
-
-  console.log(`Congratulations, ${printName}!`);
+  console.log(message2);
+  return message2;
 };
 
 export default brainCalc;
