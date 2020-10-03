@@ -27,7 +27,7 @@ const brainCalc = () => {
     const question = `${'Question: '}${firstNumber} ${operators} ${secondNumber}`;
     console.log(question);
     const printAnswer = readlineSync.question('Your answer: ');
-    if (printAnswer == result) {
+    if (printAnswer === String(result)) {
       console.log('Correct');
     } else {
       const failAnswer = `"${printAnswer}" is wrong answer ;(. Correct answer was "${result}"\n Let's try again, ${printName}!`;

@@ -7,7 +7,7 @@ const findGcd = (a, b) => {
     } else {
       b %= a;
     }
-  } let result = a + b;
+  } const result = a + b;
   return result;
 };
 
