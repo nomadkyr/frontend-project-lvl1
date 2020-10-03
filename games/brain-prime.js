@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
 const isPrime = (num) => {
-  for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {    
-    let result = num % i;
+  for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
+    const result = num % i;
     if (result === 0) {
       return 'no';
     }
