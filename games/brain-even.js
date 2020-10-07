@@ -1,18 +1,18 @@
-import randomNum from '../src/randomNum';
+import randomNum from '../src/randomNum.js';
 
-import commonGame from '../src/engine';
+import playGame from '../src/engine.js';
 
 const message = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const min = 1;
-const max = 10;
+const max = 100;
 
-const ifEven = number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
 const brainEven = () => {
   const currentQuestion = randomNum(min, max);
-  const correctAnswer = ifEven(currentQuestion) ? 'yes' : 'no';
+  const correctAnswer = isEven ? 'yes' : 'no';
   return [currentQuestion, correctAnswer];
 };
 
-export default () => commonGame(message, brainEven);
+export default () => playGame(message, brainEven);

@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 
-const commonGame = (message, brainEven) => {
+const playGame = (message, brainEven) => {
   console.log('Welcome to the Brain Games!');
   const printName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${printName}!`);
   console.log(message);
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 1; i <= 3; i += 1) {
     const [currentQuestion, correctAnswer] = brainEven();
     console.log(`${'Question: '}${currentQuestion}`);
     const printAnswer = readlineSync.question('Your answer: ');
@@ -21,4 +21,4 @@ const commonGame = (message, brainEven) => {
   console.log(`Congratulations, ${printName}!`);
 };
 
-export default commonGame;
+export default playGame;

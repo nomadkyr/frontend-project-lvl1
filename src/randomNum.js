@@ -1,6 +1,6 @@
-const randomNum = (min, max) => {
-  const number = Math.floor(Math.random() * (max - min) + min);
-  return number;
+const getRandomNum = (min, max) => {
+  const randomNum = Math.floor(Math.random() * (max - min) + min);
+  return randomNum;
 };
 
-export default randomNum;
+export default getRandomNum;

@@ -1,35 +1,26 @@
-import readlineSync from 'readline-sync';
+import randomNum from '../src/randomNum.js';
 
-const isPrime = (num) => {
-  for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
-    const result = num % i;
-    if (result === 0) {
-      return 'no';
-    }
-  }
-  return 'yes';
-};
+import playGame from '../src/engine.js';
+
+const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const min = 3;
+const max = 200;
 
 const brainPrime = () => {
-  console.log('Welcome to the Brain Games!');
-  const printName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${printName}!`);
-  const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  console.log(message);
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = Math.floor(Math.random() * (200 - 3) + 3);
-    const question = `${'Question: '}${randomNumber}`;
-    console.log(question);
-    const printAnswer = readlineSync.question('Your answer: ');
-    if (printAnswer === String(isPrime(randomNumber))) {
-      console.log('Correct');
-    } else {
-      const failAnswer = `"${printAnswer}" is wrong answer ;(. Correct answer was "${String(isPrime(randomNumber))}"\n Let's try again, ${printName}!`;
-      console.log(failAnswer);
-      return;
+  const isPrime = (num) => {
+    for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
+      const result = num % i;
+      if (result === 0) {
+        return 'no';
+      }
     }
-  }
-  console.log(`Congratulations, ${printName}!`);
+    return 'yes';
+  };
+
+  const currentQuestion = randomNum(min, max);
+  const correctAnswer = isPrime(randomNum);
+  return [currentQuestion, correctAnswer];
 };
 
-export default brainPrime;
+export default () => playGame(message, brainPrime);

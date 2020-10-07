@@ -1,13 +1,15 @@
-import readlineSync from 'readline-sync';
+import randomNum from '../src/randomNum.js';
+
+import playGame from '../src/engine.js';
+
+const message = 'What number is missing in the progression?';
+
+const min = 1;
+const max = 10;
 
 const brainProgr = () => {
-  console.log('Welcome to the Brain Games!');
-  const printName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${printName}!`);
-  const message = 'What number is missing in the progression?';
-  console.log(message);
   let firstNum = Math.floor(Math.random() * 100) + 1;
-  const commonDiff = Math.floor(Math.random() * 10) + 1;
+  const commonDiff = randomNum(min, max);
   const progression = [firstNum];
 
   for (let i = 1; i <= 9; i += 1) {
@@ -17,18 +19,10 @@ const brainProgr = () => {
   const fullProgression = progression.slice();
   const emptyNum = Math.floor(Math.random() * Math.floor(10));
   progression[emptyNum] = '..';
-  const question = `${'Question: '}${progression}`;
-  console.log(question);
-  const printAnswer = readlineSync.question('Your answer: ');
 
-  if (printAnswer === String(fullProgression[emptyNum])) {
-    console.log('Correct');
-  } else {
-    const failAnswer = `"${printAnswer}" is wrong answer ;(. Correct answer was "${fullProgression[emptyNum]}"\n Let's try again, ${printName}!`;
-    console.log(failAnswer);
-    return;
-  }
-  console.log(`Congratulations, ${printName}!`);
+  const currentQuestion = progression;
+  const correctAnswer = String(fullProgression[emptyNum]);
+  return [currentQuestion, correctAnswer];
 };
 
-export default brainProgr;
+export default () => playGame(message, brainProgr);
