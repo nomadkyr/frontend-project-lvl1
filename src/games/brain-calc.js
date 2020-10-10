@@ -3,24 +3,28 @@ import playGame from '../index.js';
 
 const message = 'What is the result of the expression?';
 
-const сalculate = () => {
-  const firstNumber = getRandomNum(1, 20);
-  const secondNumber = getRandomNum(1, 20);
-  const operators = ['+', '-', '*'][getRandomNum(0, 3)];
-  let result;
-  switch (operators) {
+const calculator = (num1, num2, operator) => {
+  switch (operator) {
     case '+':
-      result = firstNumber + secondNumber; break;
+      return num1 + num2;
     case '-':
-      result = firstNumber - secondNumber; break;
+      return num1 - num2;
     case '*':
-      result = firstNumber * secondNumber; break;
+      return num1 * num2;
     default:
       return null;
   }
-  const question = `${firstNumber} ${operators} ${secondNumber}`;
-  const answer = String(result);
+};
+
+const guessResult = () => {
+  const operatorSigns = ['+', '-', '*'];
+  const index = getRandomNum(0, 2);
+  const randomOperator = operatorSigns[index];
+  const firstNumber = getRandomNum(1, 20);
+  const secondNumber = getRandomNum(1, 20);
+  const question = `${firstNumber} ${randomOperator} ${secondNumber}`;
+  const answer = String(calculator(firstNumber, secondNumber, randomOperator));
   return [question, answer];
 };
 
-export default () => playGame(message, сalculate);
+export default () => playGame(message, guessResult);

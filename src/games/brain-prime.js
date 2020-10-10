@@ -3,18 +3,21 @@ import playGame from '../index.js';
 
 const message = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const primeNum = (num) => {
-  for (let i = 2; i <= Math.floor(Math.sqrt(num)); i += 1) {
+const isPrime = (num) => {
+  if (num === 1) {
+    return false;
+  }
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
 const guessPrime = () => {
   const question = getRandomNum(3, 200);
-  const answer = primeNum(question);
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
 

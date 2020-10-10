@@ -8,13 +8,12 @@ const playGame = (message, generateGameData) => {
   console.log(`Hello, ${usersName}!`);
   console.log(message);
 
-  for (let i = 1; i <= 3; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const [question, answer] = generateGameData();
-    console.log(`${'Question: '}${question}`);
+    console.log(`Question: ${question}`);
     const usersAnswer = readlineSync.question('Your answer: ');
     if (usersAnswer !== answer) {
-      const failAnswer = `"${usersAnswer}" is wrong answer ;(. Correct answer was "${answer}"\n Let's try again, ${usersName}!`;
-      console.log(failAnswer);
+      console.log(`"${usersAnswer}" is wrong answer ;(. Correct answer was "${answer}"\n Let's try again, ${usersName}!`);
       return;
     } console.log('Correct!');
   }

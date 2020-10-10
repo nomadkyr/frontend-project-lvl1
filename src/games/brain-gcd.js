@@ -7,9 +7,7 @@ const findGcd = () => {
   const getGcd = (a, b) => {
     if (b === 0) {
       return a;
-    } if (a > b) {
-      return getGcd(b, a % b);
-    } return getGcd(a, b % a);
+    } return getGcd(b, a % b);
   };
 
   const a = getRandomNum(1, 100);
