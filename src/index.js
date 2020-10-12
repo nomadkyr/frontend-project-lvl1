@@ -15,7 +15,8 @@ const playGame = (message, generateGameData) => {
     if (usersAnswer !== answer) {
       console.log(`"${usersAnswer}" is wrong answer ;(. Correct answer was "${answer}"\n Let's try again, ${usersName}!`);
       return;
-    } console.log('Correct!');
+    }
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${usersName}!`);
 };
