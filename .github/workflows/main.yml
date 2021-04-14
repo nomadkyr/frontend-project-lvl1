@@ -1,44 +1,23 @@
-# Name of workflow
-name: run_eslint
+name: Test
 
-# Trigger the workflow on push or pull request
-on:
-  - push  
-  - pull_request
+on: [push, pull_request]
 
 jobs:
-  build:
 
-    # The type of machine to run the job on
+  test:
     runs-on: ubuntu-latest
-
     strategy:
-      # Node versions list
-      matrix:
-        node-version: [14.x]
-
+      fail-fast: false
+      matrix: 
+        run: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
     steps:
-        # Check-out repository under GitHub workspace
-        # https://github.com/actions/checkout
+
       - uses: actions/checkout@v2
-        # Step's name
-      - name: Use Node.js ${{ matrix.node-version }}
-        # Configures the node version used on GitHub-hosted runners
-        # https://github.com/actions/setup-node
-        uses: actions/setup-node@v1
-        # The Node.js version to configure
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: npm install, build
-        # Install and build project
-        run: |
-          make install
-      # Add environment variables
-        env:
-          CI: true
-        
-      - name: Run linter
-        # Run Linter
-        run: |
-          make lint
+
+
+      - name: chmod
+        run: chmod +x xxx
+
+      - name: run
+        run: ./xxx
       
